@@ -1,0 +1,222 @@
+/* Hyungsuk Lee — personal academic site */
+
+:root {
+  --ink:      #1a1a1a;
+  --muted:    #6b6b6b;
+  --faint:    #8e8e8e;
+  --accent:   #1f3864;
+  --rule:     #dcdcdc;
+  --bg:       #ffffff;
+  --status:   #b03a2e;
+  --maxw:     46rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:    #e6e6e6;
+    --muted:  #a6a6a6;
+    --faint:  #8e8e8e;
+    --accent: #9db8e0;
+    --rule:   #3a3a3a;
+    --bg:     #16181c;
+    --status: #e08b7f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+  max-width: var(--maxw);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+a:hover { border-bottom-color: var(--accent); }
+
+/* ---------- header ---------- */
+header {
+  margin-bottom: 2.75rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+}
+
+header .ko {
+  margin: 0.15rem 0 0.9rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+header .affil {
+  margin: 0 0 0.9rem;
+  color: var(--ink);
+}
+
+header .links {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+header .links .sep { color: var(--faint); margin: 0 0.45rem; }
+
+/* ---------- sections ---------- */
+section { margin-bottom: 2.6rem; }
+
+h2 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.3rem;
+  font-size: 1.06rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+p { margin: 0 0 0.85rem; }
+
+/* ---------- paper lists ---------- */
+ol.papers, ul.papers {
+  margin: 0;
+  padding-left: 1.7rem;
+}
+ul.papers { list-style: none; padding-left: 0; }
+
+.papers li {
+  margin-bottom: 1.15rem;
+  padding-left: 0;
+}
+
+ul.papers li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+ul.papers li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--faint);
+}
+
+.papers .ttl {
+  display: block;
+  font-weight: 600;
+}
+
+.papers .co,
+.papers .ven,
+.papers .act,
+.papers .st {
+  display: block;
+  font-size: 0.93rem;
+}
+
+.papers .co  { color: var(--muted); }
+.papers .ven { color: var(--muted); }
+.papers .act { margin-top: 0.15rem; font-size: 0.88rem; }
+.papers .st  { color: var(--status); font-weight: 600; }
+
+/* ---------- plain lists ---------- */
+ul.plain {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.plain li {
+  margin-bottom: 0.72rem;
+  padding-right: 6.5rem;
+  position: relative;
+}
+
+ul.plain .yr {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 6rem;
+  text-align: right;
+  color: var(--faint);
+  font-size: 0.88rem;
+}
+
+ul.plain .sub {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+/* year-prefixed presentation list */
+ul.years li { padding-right: 0; padding-left: 3.6rem; }
+ul.years .y {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--faint);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.note {
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  color: var(--faint);
+  font-size: 0.86rem;
+}
+footer p { margin: 0; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 34rem) {
+  body { padding: 2.25rem 1.15rem 3rem; font-size: 16px; }
+  header h1 { font-size: 1.72rem; }
+  header .links .sep { display: none; }
+  header .links a { display: block; margin-bottom: 0.2rem; }
+
+  ul.plain li { padding-right: 0; }
+  ul.plain .yr {
+    position: static;
+    display: block;
+    width: auto;
+    text-align: left;
+  }
+  ul.years li { padding-left: 0; }
+  ul.years .y { position: static; display: block; font-weight: 600; }
+}
+
+@media print {
+  body { max-width: none; font-size: 11pt; }
+  a { color: inherit; border: 0; }
+  section { page-break-inside: avoid; }
+}
