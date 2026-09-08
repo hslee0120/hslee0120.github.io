@@ -274,3 +274,33 @@ footer p { margin: 0; }
   a { color: inherit; border: 0; }
   section { page-break-inside: avoid; }
 }
+
+/* ---------- reports list (Korean title + English gloss) ---------- */
+ul.reports { margin: 0; padding-left: 1.15rem; list-style: none; }
+ul.reports li {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+ul.reports li::before {
+  content: "·";
+  position: absolute;
+  left: -0.9rem;
+  color: var(--faint);
+}
+ul.reports .kt { display: block; }
+ul.reports .en {
+  display: block;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+/* ---------- media list ---------- */
+ul.media { margin: 0; padding: 0; list-style: none; }
+ul.media li { margin-bottom: 0.9rem; }
+ul.media .mt { display: block; }
+ul.media .mm {
+  display: block;
+  color: var(--muted);
+  font-size: 0.89rem;
+}
