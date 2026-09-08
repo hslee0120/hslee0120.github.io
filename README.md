@@ -16,13 +16,13 @@ cv/          CV PDF
 
 github.com에 로그인 → **New repository**
 
-- **Repository name**: `<본인아이디>.github.io`
+- **Repository name**: `hslee0120.github.io`
   예: 아이디가 `hyungsuklee`면 → `hyungsuklee.github.io`
 - **Public** 선택
 - README·.gitignore·license **추가하지 말 것** (빈 저장소로)
 
-> 저장소 이름을 `<아이디>.github.io`로 하면 주소가 `https://<아이디>.github.io`가 된다.
-> 다른 이름으로 만들면 `https://<아이디>.github.io/<저장소명>`이 된다.
+> 저장소 이름을 `hslee0120.github.io`로 하면 주소가 `https://hslee0120.github.io`가 된다.
+> 다른 이름으로 만들면 `https://hslee0120.github.io/<저장소명>`이 된다.
 
 ### 2. 이 폴더를 올리기
 
@@ -33,7 +33,7 @@ git init
 git add .
 git commit -m "Initial site"
 git branch -M main
-git remote add origin https://github.com/<본인아이디>/<본인아이디>.github.io.git
+git remote add origin https://github.com/hslee0120/hslee0120.github.io.git
 git push -u origin main
 ```
 
@@ -55,7 +55,7 @@ Tokens (classic) → Generate new token → `repo` 권한 체크 → 생성 후 
 - Source: **Deploy from a branch**
 - Branch: **main** / **/ (root)** → Save
 
-1~2분 뒤 `https://<본인아이디>.github.io` 로 열린다.
+1~2분 뒤 `https://hslee0120.github.io` 로 열린다.
 
 ### 4. 이후 수정
 
