@@ -47,36 +47,90 @@ a:hover { border-bottom-color: var(--accent); }
 
 /* ---------- header ---------- */
 header {
-  margin-bottom: 2.75rem;
-  padding-bottom: 1.6rem;
+  margin-bottom: 2.4rem;
+  padding-bottom: 0;
   border-bottom: 2px solid var(--accent);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.1rem;
+  font-size: 1.95rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--accent);
 }
+header h1 a { color: var(--accent); border: 0; }
 
-header .ko {
-  margin: 0.15rem 0 0.9rem;
+header .sub {
+  margin: 0.2rem 0 1.1rem;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.97rem;
 }
 
-header .affil {
-  margin: 0 0 0.9rem;
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-bottom: -1px;
+}
+
+nav a {
+  padding: 0.45rem 0 0.6rem;
+  font-size: 0.94rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+}
+nav a:hover { color: var(--accent); border-bottom-color: var(--rule); }
+nav a.active {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- home hero ---------- */
+.hero .welcome {
+  border: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.hero .lede {
+  font-size: 1.08rem;
   color: var(--ink);
 }
 
-header .links {
-  margin: 0;
-  font-size: 0.94rem;
+.cvbtn a {
+  display: inline-block;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  font-size: 0.95rem;
 }
+.cvbtn a:hover { background: var(--accent); color: var(--bg); }
 
-header .links .sep { color: var(--faint); margin: 0 0.45rem; }
+.sub2 { color: var(--muted); font-size: 0.92rem; }
+
+ul.compact {
+  margin: 0;
+  padding-left: 1.15rem;
+  list-style: none;
+}
+ul.compact li {
+  position: relative;
+  margin-bottom: 0.3rem;
+  font-size: 0.93rem;
+  color: var(--ink);
+}
+ul.compact li::before {
+  content: "·";
+  position: absolute;
+  left: -0.9rem;
+  color: var(--faint);
+}
 
 /* ---------- sections ---------- */
 section { margin-bottom: 2.6rem; }
@@ -200,9 +254,9 @@ footer p { margin: 0; }
 /* ---------- responsive ---------- */
 @media (max-width: 34rem) {
   body { padding: 2.25rem 1.15rem 3rem; font-size: 16px; }
-  header h1 { font-size: 1.72rem; }
-  header .links .sep { display: none; }
-  header .links a { display: block; margin-bottom: 0.2rem; }
+  header h1 { font-size: 1.62rem; }
+  nav { gap: 1.1rem; }
+  nav a { font-size: 0.9rem; }
 
   ul.plain li { padding-right: 0; }
   ul.plain .yr {
